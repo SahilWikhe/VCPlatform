@@ -13,11 +13,13 @@ const router = express.Router();
 
 // Public routes
 router.get('/', getStartups);
-router.get('/:id', getStartupById);
 
 // Protected routes
 router.post('/', protect, restrictTo(UserRole.STARTUP), createStartupProfile);
 router.get('/me', protect, restrictTo(UserRole.STARTUP), getMyStartupProfile);
 router.put('/me', protect, restrictTo(UserRole.STARTUP), updateStartupProfile);
+
+// This route must come after the /me routes to prevent "me" from being treated as an ID
+router.get('/:id', getStartupById);
 
 export default router; 
