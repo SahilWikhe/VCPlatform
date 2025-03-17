@@ -22,7 +22,6 @@ import NotFoundPage from './pages/NotFoundPage';
 import UnauthorizedPage from './pages/UnauthorizedPage';
 
 // Protected Pages
-import ProfilePage from './pages/ProfilePage';
 import StartupDashboardPage from './pages/StartupDashboardPage';
 import InvestorDashboardPage from './pages/InvestorDashboardPage';
 import StartupProfilePage from './pages/StartupProfilePage';
@@ -45,11 +44,6 @@ const App: React.FC = () => {
               <Route path="/investors" element={<InvestorListPage />} />
               <Route path="/investors/:id" element={<InvestorDetailPage />} />
               <Route path="/unauthorized" element={<UnauthorizedPage />} />
-
-              {/* Protected Routes - Any authenticated user */}
-              <Route element={<ProtectedRoute />}>
-                <Route path="/profile" element={<ProfilePage />} />
-              </Route>
 
               {/* Protected Routes - Startup only */}
               <Route element={<ProtectedRoute allowedRoles={[UserRole.STARTUP]} />}>

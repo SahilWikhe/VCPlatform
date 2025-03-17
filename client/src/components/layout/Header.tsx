@@ -78,7 +78,6 @@ const Header: React.FC = () => {
   // User menu items based on authentication status
   const userMenuItems = isAuthenticated
     ? [
-        { label: 'Profile', path: '/profile' },
         { label: 'Dashboard', path: user?.role === UserRole.STARTUP ? '/startup/dashboard' : '/investor/dashboard' },
         { label: 'Logout', action: handleLogout },
       ]
