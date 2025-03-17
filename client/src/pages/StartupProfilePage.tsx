@@ -251,11 +251,11 @@ const StartupProfilePage: React.FC = () => {
             {isEditing && (
               <>
                 <TextField
-                  name="name"
+                  name="companyName"
                   label="Company Name"
                   fullWidth
                   required
-                  value={formData.name || formData.companyName || ''}
+                  value={formData.companyName || ''}
                   onChange={handleInputChange}
                   sx={{ mb: 2 }}
                 />
